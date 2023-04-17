@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el fondo de pantalla. */
+body {
+    /* background-image: url("../img/main-background.png"); */
+    background-image: url("../img/terriermon.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#logo {
+    width: 100px;
+}
+
+/* Estilos de fondo de cada card por nivel. */
+.Fresh {
+    background: #5eb9b2;
+}
+.Fresh img {
+    border-radius: 50%;
+}
+
+.Training {
+    background: #aedf78;
+}
+.Training img {
+    border-radius: 50%;
+}
+
+.Rookie {
+    background: #43ccff;
+}
+.Rookie img {
+    border-radius: 50%;
+}
+
+.Champion {
+    background: #8e55a4;
+    color: white;
+}
+.Champion img {
+    border-radius: 50%;
+}
+
+.Ultimate {
+    background: #f9be00;
+}
+.Ultimate img {
+    border-radius: 50%;
+}
+
+.Mega {
+    background: #e95c4d;
+}
+.Mega img {
+    border-radius: 50%;
+}
+
+.Armor {
+    background: #7b8e8a;
+    color: #fff;
+}
+.Armor img {
+    border-radius: 50%;
+}
+
+/* Ocultar el formulario. */
+#seccion-buscar {
+    display: none;
+}
+
+/* Linea de division de la card entre la imagen y la descripción. */
+.imagen {
+    border-right: 1px solid lightgray;
+}
+
+/*** MEDIA QUERIES ***/
+@media (max-width: 767.98px) {
+    .imagen {
+        border-right: 0;
+        border-bottom: 1px solid lightgray;
+    }
+    
+}
