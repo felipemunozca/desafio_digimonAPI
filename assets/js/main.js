@@ -76,6 +76,18 @@ async function buscarDigimonPorNombre(nombreDigimon) {
 function imprimirDatosUnDigimon(datos){
     var contenido = document.querySelector('#contenido');
     var card = document.querySelector('#card-buscar');
+    
+    /* Se crean variables para corregir el problema de las descripciones en distintos idiomas. */
+    var historia;
+    var lenguaje_1 = datos.descriptions[0].language;
+    var lenguaje_2 = datos.descriptions[1].language;
+
+    if (lenguaje_1 == "en_us") {
+        historia = datos.descriptions[0].description;
+    } 
+    if (lenguaje_2 == "en_us") {
+        historia = datos.descriptions[1].description;
+    }
 
     var detalles = `
         <div class="col-md-5 text-center pt-2 imagen">
@@ -85,7 +97,7 @@ function imprimirDatosUnDigimon(datos){
         <div class="col-md-7">
             <span></span>
             <div class="card-body">
-                <p class="card-text"><strong>Descripción:</strong> ${datos.descriptions[1].description}</p>
+                <p class="card-text"><strong>Descripción:</strong> ${historia}</p>
                 <p class="card-text"><strong>Nivel:</strong> ${datos.levels[0].level}</p>
                 <p class="card-text"><strong>Tipo:</strong> ${datos.types[0].type}</p>
                 <p class="card-text"><strong>Atributo:</strong> ${datos.attributes[0].attribute}</p>
