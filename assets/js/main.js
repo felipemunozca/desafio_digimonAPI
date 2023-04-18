@@ -75,7 +75,7 @@ async function buscarDigimonPorNombre(nombreDigimon) {
 /* Función para imprimir la información del Digimon buscado. */
 function imprimirDatosUnDigimon(datos){
     var contenido = document.querySelector('#contenido');
-    var card = document.querySelector('#card-buscar');
+    // var card = document.querySelector('#card-buscar');
     
     /* Se crean variables para corregir el problema de las descripciones en distintos idiomas. */
     var historia;
@@ -90,22 +90,26 @@ function imprimirDatosUnDigimon(datos){
     }
 
     var detalles = `
-        <div class="col-md-5 text-center pt-2 imagen">
-            <h3 class="card-title mt-1">${datos.name}</h3>
-            <img src="${datos.images[0].href}" class="img-fluid rounded-start" alt="${datos.name}">
-        </div>
-        <div class="col-md-7">
-            <span></span>
-            <div class="card-body">
-                <p class="card-text"><strong>Descripción:</strong> ${historia}</p>
-                <p class="card-text"><strong>Nivel:</strong> ${datos.levels[0].level}</p>
-                <p class="card-text"><strong>Tipo:</strong> ${datos.types[0].type}</p>
-                <p class="card-text"><strong>Atributo:</strong> ${datos.attributes[0].attribute}</p>
+        <div class="card mb-3 d-block">
+            <div class="row g-0">
+                <div class="col-md-5 text-center pt-2 separador">
+                    <h3 class="card-title mt-1">${datos.name}</h3>
+                    <img src="${datos.images[0].href}" class="img-fluid rounded-start" alt="${datos.name}">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Descripción:</strong> ${historia}</p>
+                        <p class="card-text"><strong>Nivel:</strong> ${datos.levels[0].level}</p>
+                        <p class="card-text"><strong>Tipo:</strong> ${datos.types[0].type}</p>
+                        <p class="card-text"><strong>Atributo:</strong> ${datos.attributes[0].attribute}</p>
+                    </div>
+                </div>
             </div>
         </div>
+        
     `;
 
-    card.className = "card mb-3 d-block";
+    // card.className = "card mb-3 d-block";
     contenido.innerHTML = detalles;
 }
 
@@ -121,6 +125,8 @@ $("#menu-1").click(function(){
     $('#seccion-buscar').hide();
     limpiarFormulario();
     nombreDigimon.focus();
+    var contenido = document.querySelector('#contenido');
+    contenido.innerHTML = "";
 });
 
 $("#menu-2").click(function(){
@@ -128,4 +134,6 @@ $("#menu-2").click(function(){
     $('#seccion-buscar').show();
     limpiarFormulario();
     nombreDigimon.focus();
+    var contenido = document.querySelector('#contenido');
+    contenido.innerHTML = "";
 });

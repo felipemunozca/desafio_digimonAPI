@@ -75,14 +75,16 @@ body {
 }
 
 /* Linea de division de la card entre la imagen y la descripción. */
-.imagen {
+.separador {
+    border-bottom: 0px;
     border-right: 1px solid lightgray;
+    
 }
 
 /*** MEDIA QUERIES ***/
 @media (max-width: 767.98px) {
-    .imagen {
-        border-right: 0;
+    .separador {
+        border-right: 0px;
         border-bottom: 1px solid lightgray;
     }
     
