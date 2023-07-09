@@ -137,3 +137,10 @@ $("#menu-2").click(function(){
     var contenido = document.querySelector('#contenido');
     contenido.innerHTML = "";
 });
+
+$(document).ready(function(){
+    setTimeout(function() {
+        $("#loader").removeClass("d-flex");
+        $("#loader").addClass("d-none");
+    }, 2000);
+});
